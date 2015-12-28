@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRiadokFakturyTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRiadokFakturyLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{riadokFakturyController.selected.id}" title="#{bundle.EditRiadokFakturyTitle_id}" required="true" requiredMessage="#{bundle.EditRiadokFakturyRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditRiadokFakturyLabel_mnozstvo}" for="mnozstvo" />
+                    <h:inputText id="mnozstvo" value="#{riadokFakturyController.selected.mnozstvo}" title="#{bundle.EditRiadokFakturyTitle_mnozstvo}" required="true" requiredMessage="#{bundle.EditRiadokFakturyRequiredMessage_mnozstvo}"/>
+                    <h:outputLabel value="#{bundle.EditRiadokFakturyLabel_cenaBezDph}" for="cenaBezDph" />
+                    <h:inputText id="cenaBezDph" value="#{riadokFakturyController.selected.cenaBezDph}" title="#{bundle.EditRiadokFakturyTitle_cenaBezDph}" required="true" requiredMessage="#{bundle.EditRiadokFakturyRequiredMessage_cenaBezDph}"/>
+                    <h:outputLabel value="#{bundle.EditRiadokFakturyLabel_cenaSpolu}" for="cenaSpolu" />
+                    <h:inputText id="cenaSpolu" value="#{riadokFakturyController.selected.cenaSpolu}" title="#{bundle.EditRiadokFakturyTitle_cenaSpolu}" required="true" requiredMessage="#{bundle.EditRiadokFakturyRequiredMessage_cenaSpolu}"/>
+                    <h:outputLabel value="#{bundle.EditRiadokFakturyLabel_tovar}" for="tovar" />
+                    <h:selectOneMenu id="tovar" value="#{riadokFakturyController.selected.tovar}" title="#{bundle.EditRiadokFakturyTitle_tovar}" required="true" requiredMessage="#{bundle.EditRiadokFakturyRequiredMessage_tovar}">
+                        <f:selectItems value="#{tovarController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRiadokFakturyLabel_faktura}" for="faktura" />
+                    <h:selectOneMenu id="faktura" value="#{riadokFakturyController.selected.faktura}" title="#{bundle.EditRiadokFakturyTitle_faktura}" required="true" requiredMessage="#{bundle.EditRiadokFakturyRequiredMessage_faktura}">
+                        <f:selectItems value="#{fakturaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRiadokFakturyLabel_dph}" for="dph" />
+                    <h:selectOneMenu id="dph" value="#{riadokFakturyController.selected.dph}" title="#{bundle.EditRiadokFakturyTitle_dph}" required="true" requiredMessage="#{bundle.EditRiadokFakturyRequiredMessage_dph}">
+                        <f:selectItems value="#{dphController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{riadokFakturyController.update}" value="#{bundle.EditRiadokFakturySaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditRiadokFakturyViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{riadokFakturyController.prepareList}" value="#{bundle.EditRiadokFakturyShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditRiadokFakturyIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

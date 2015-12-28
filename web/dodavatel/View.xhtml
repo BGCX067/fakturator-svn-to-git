@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewDodavatelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_id}"/>
+                    <h:outputText value="#{dodavatelController.selected.id}" title="#{bundle.ViewDodavatelTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_nazov}"/>
+                    <h:outputText value="#{dodavatelController.selected.nazov}" title="#{bundle.ViewDodavatelTitle_nazov}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_ulica}"/>
+                    <h:outputText value="#{dodavatelController.selected.ulica}" title="#{bundle.ViewDodavatelTitle_ulica}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_mesto}"/>
+                    <h:outputText value="#{dodavatelController.selected.mesto}" title="#{bundle.ViewDodavatelTitle_mesto}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_psc}"/>
+                    <h:outputText value="#{dodavatelController.selected.psc}" title="#{bundle.ViewDodavatelTitle_psc}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_krajina}"/>
+                    <h:outputText value="#{dodavatelController.selected.krajina}" title="#{bundle.ViewDodavatelTitle_krajina}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_poznamka}"/>
+                    <h:outputText value="#{dodavatelController.selected.poznamka}" title="#{bundle.ViewDodavatelTitle_poznamka}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_ico}"/>
+                    <h:outputText value="#{dodavatelController.selected.ico}" title="#{bundle.ViewDodavatelTitle_ico}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_dic}"/>
+                    <h:outputText value="#{dodavatelController.selected.dic}" title="#{bundle.ViewDodavatelTitle_dic}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_icdph}"/>
+                    <h:outputText value="#{dodavatelController.selected.icdph}" title="#{bundle.ViewDodavatelTitle_icdph}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_registerOpZr}"/>
+                    <h:outputText value="#{dodavatelController.selected.registerOpZr}" title="#{bundle.ViewDodavatelTitle_registerOpZr}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_telefon}"/>
+                    <h:outputText value="#{dodavatelController.selected.telefon}" title="#{bundle.ViewDodavatelTitle_telefon}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_mobil}"/>
+                    <h:outputText value="#{dodavatelController.selected.mobil}" title="#{bundle.ViewDodavatelTitle_mobil}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_email}"/>
+                    <h:outputText value="#{dodavatelController.selected.email}" title="#{bundle.ViewDodavatelTitle_email}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_web}"/>
+                    <h:outputText value="#{dodavatelController.selected.web}" title="#{bundle.ViewDodavatelTitle_web}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_logo}"/>
+                    <h:outputText value="#{dodavatelController.selected.logo}" title="#{bundle.ViewDodavatelTitle_logo}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_peciatka}"/>
+                    <h:outputText value="#{dodavatelController.selected.peciatka}" title="#{bundle.ViewDodavatelTitle_peciatka}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_kontaktnaOsoba}"/>
+                    <h:outputText value="#{dodavatelController.selected.kontaktnaOsoba}" title="#{bundle.ViewDodavatelTitle_kontaktnaOsoba}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_platcaDph}"/>
+                    <h:outputText value="#{dodavatelController.selected.platcaDph}" title="#{bundle.ViewDodavatelTitle_platcaDph}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_zaokruhlenie}"/>
+                    <h:outputText value="#{dodavatelController.selected.zaokruhlenie}" title="#{bundle.ViewDodavatelTitle_zaokruhlenie}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLabel_dodavatelLogin}"/>
+                    <h:outputText value="#{dodavatelController.selected.dodavatelLogin}" title="#{bundle.ViewDodavatelTitle_dodavatelLogin}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{dodavatelController.destroyAndView}" value="#{bundle.ViewDodavatelDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewDodavatelEditLink}"/>
+                <br />
+                <h:commandLink action="#{dodavatelController.prepareCreate}" value="#{bundle.ViewDodavatelCreateLink}" />
+                <br />
+                <h:commandLink action="#{dodavatelController.prepareList}" value="#{bundle.ViewDodavatelShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewDodavatelIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

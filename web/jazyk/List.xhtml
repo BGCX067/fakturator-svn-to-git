@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListJazykTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListJazykEmpty}" rendered="#{jazykController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{jazykController.items.rowCount > 0}">
+                <h:outputText value="#{jazykController.pagination.pageFirstItem + 1}..#{jazykController.pagination.pageLastItem + 1}/#{jazykController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{jazykController.previous}" value="#{bundle.Previous} #{jazykController.pagination.pageSize}" rendered="#{jazykController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{jazykController.next}" value="#{bundle.Next} #{jazykController.pagination.pageSize}" rendered="#{jazykController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{jazykController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListJazykTitle_id}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListJazykTitle_nazov}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nazov}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{jazykController.prepareView}" value="#{bundle.ListJazykViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{jazykController.prepareEdit}" value="#{bundle.ListJazykEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{jazykController.destroy}" value="#{bundle.ListJazykDestroyLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <h:commandLink action="#{jazykController.prepareCreate}" value="#{bundle.ListJazykCreateLink}"/>
+            <br />
+            <br />
+            <h:commandLink value="#{bundle.ListJazykIndexLink}" action="/index" immediate="true" />
+        </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

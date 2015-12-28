@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="tovar/List.xhtml" x="150" y="1350" zoom="true"/>
+        <Node id="jazyk/List.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="dodavatel/List.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="jazyk/Edit.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="typFaktura/Create.xhtml" x="400" y="1350" zoom="true"/>
+        <Node id="faktura/View.xhtml" x="2650" y="150" zoom="true"/>
+        <Node id="zaokruhlenie/View.xhtml" x="1150" y="600" zoom="true"/>
+        <Node id="dodavatel/View.xhtml" x="2400" y="150" zoom="true"/>
+        <Node id="zaokruhlenie/Edit.xhtml" x="2150" y="450" zoom="true"/>
+        <Node id="tovar/Create.xhtml" x="650" y="1200" zoom="true"/>
+        <Node id="faktura/Create.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="tovar/View.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="typFaktura/View.xhtml" x="1400" y="600" zoom="true"/>
+        <Node id="riadokFaktury/View.xhtml" x="900" y="750" zoom="true"/>
+        <Node id="odberatel/Create.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="projekt/Edit.xhtml" x="150" y="1500" zoom="true"/>
+        <Node id="formaUhrady/Create.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="dodavatelLogin/Create.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="formaUhrady/List.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="dodavatel/Create.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="dodavatelLogin/View.xhtml" x="1150" y="1050" zoom="true"/>
+        <Node id="jazyk/View.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="kategoria/Edit.xhtml" x="2150" y="150" zoom="true"/>
+        <Node id="projekt/List.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="projekt/Create.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="mena/List.xhtml" x="1900" y="450" zoom="true"/>
+        <Node id="bankovyUcet/Edit.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="odberatel/List.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="template.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="zaokruhlenie/Create.xhtml" x="1150" y="750" zoom="true"/>
+        <Node id="zaokruhlenie/List.xhtml" x="1150" y="900" zoom="true"/>
+        <Node id="odberatel/View.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="dodavatel/Edit.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="bankovyUcet/View.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="kategoria/Create.xhtml" x="650" y="1050" zoom="true"/>
+        <Node id="riadokFaktury/Edit.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="typFaktura/Edit.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="dodavatelLogin/Edit.xhtml" x="1650" y="600" zoom="true"/>
+        <Node id="faktura/List.xhtml" x="900" y="900" zoom="true"/>
+        <Node id="riadokFaktury/List.xhtml" x="1900" y="600" zoom="true"/>
+        <Node id="projekt/View.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="bankovyUcet/Create.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="dph/Create.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="dodavatelLogin/List.xhtml" x="1400" y="900" zoom="true"/>
+        <Node id="dph/View.xhtml" x="1900" y="300" zoom="true"/>
+        <Node id="kategoria/View.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="mena/Edit.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="odberatel/Edit.xhtml" x="2150" y="300" zoom="true"/>
+        <Node id="tovar/Edit.xhtml" x="400" y="1050" zoom="true"/>
+        <Node id="typFaktura/List.xhtml" x="1650" y="450" zoom="true"/>
+        <Node id="mena/Create.xhtml" x="2400" y="300" zoom="true"/>
+        <Node id="kategoria/List.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="faktura/Edit.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="formaUhrady/View.xhtml" x="400" y="1200" zoom="true"/>
+        <Node id="index.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="dph/Edit.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="jazyk/Create.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="mena/View.xhtml" x="1650" y="750" zoom="true"/>
+        <Node id="bankovyUcet/List.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="formaUhrady/Edit.xhtml" x="1400" y="750" zoom="true"/>
+        <Node id="riadokFaktury/Create.xhtml" x="900" y="1050" zoom="true"/>
+        <Node id="dph/List.xhtml" x="400" y="300" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

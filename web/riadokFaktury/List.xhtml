@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListRiadokFakturyTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListRiadokFakturyEmpty}" rendered="#{riadokFakturyController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{riadokFakturyController.items.rowCount > 0}">
+                <h:outputText value="#{riadokFakturyController.pagination.pageFirstItem + 1}..#{riadokFakturyController.pagination.pageLastItem + 1}/#{riadokFakturyController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{riadokFakturyController.previous}" value="#{bundle.Previous} #{riadokFakturyController.pagination.pageSize}" rendered="#{riadokFakturyController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{riadokFakturyController.next}" value="#{bundle.Next} #{riadokFakturyController.pagination.pageSize}" rendered="#{riadokFakturyController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{riadokFakturyController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListRiadokFakturyTitle_id}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListRiadokFakturyTitle_mnozstvo}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.mnozstvo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListRiadokFakturyTitle_cenaBezDph}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cenaBezDph}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListRiadokFakturyTitle_cenaSpolu}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cenaSpolu}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListRiadokFakturyTitle_tovar}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.tovar}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListRiadokFakturyTitle_faktura}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.faktura}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListRiadokFakturyTitle_dph}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.dph}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{riadokFakturyController.prepareView}" value="#{bundle.ListRiadokFakturyViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{riadokFakturyController.prepareEdit}" value="#{bundle.ListRiadokFakturyEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{riadokFakturyController.destroy}" value="#{bundle.ListRiadokFakturyDestroyLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <h:commandLink action="#{riadokFakturyController.prepareCreate}" value="#{bundle.ListRiadokFakturyCreateLink}"/>
+            <br />
+            <br />
+            <h:commandLink value="#{bundle.ListRiadokFakturyIndexLink}" action="/index" immediate="true" />
+        </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListDodavatelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListDodavatelEmpty}" rendered="#{dodavatelController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{dodavatelController.items.rowCount > 0}">
+                <h:outputText value="#{dodavatelController.pagination.pageFirstItem + 1}..#{dodavatelController.pagination.pageLastItem + 1}/#{dodavatelController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{dodavatelController.previous}" value="#{bundle.Previous} #{dodavatelController.pagination.pageSize}" rendered="#{dodavatelController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{dodavatelController.next}" value="#{bundle.Next} #{dodavatelController.pagination.pageSize}" rendered="#{dodavatelController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{dodavatelController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_id}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_nazov}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nazov}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_ulica}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.ulica}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_mesto}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.mesto}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_psc}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.psc}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_krajina}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.krajina}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_poznamka}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.poznamka}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_ico}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.ico}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_dic}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.dic}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_icdph}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.icdph}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_registerOpZr}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.registerOpZr}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_telefon}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.telefon}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_mobil}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.mobil}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_email}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.email}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_web}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.web}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_logo}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.logo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_peciatka}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.peciatka}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_kontaktnaOsoba}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.kontaktnaOsoba}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_platcaDph}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.platcaDph}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_zaokruhlenie}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.zaokruhlenie}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListDodavatelTitle_dodavatelLogin}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.dodavatelLogin}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{dodavatelController.prepareView}" value="#{bundle.ListDodavatelViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{dodavatelController.prepareEdit}" value="#{bundle.ListDodavatelEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{dodavatelController.destroy}" value="#{bundle.ListDodavatelDestroyLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <h:commandLink action="#{dodavatelController.prepareCreate}" value="#{bundle.ListDodavatelCreateLink}"/>
+            <br />
+            <br />
+            <h:commandLink value="#{bundle.ListDodavatelIndexLink}" action="/index" immediate="true" />
+        </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

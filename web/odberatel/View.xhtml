@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewOdberatelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_id}"/>
+                    <h:outputText value="#{odberatelController.selected.id}" title="#{bundle.ViewOdberatelTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_nazov}"/>
+                    <h:outputText value="#{odberatelController.selected.nazov}" title="#{bundle.ViewOdberatelTitle_nazov}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_ulica}"/>
+                    <h:outputText value="#{odberatelController.selected.ulica}" title="#{bundle.ViewOdberatelTitle_ulica}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_mesto}"/>
+                    <h:outputText value="#{odberatelController.selected.mesto}" title="#{bundle.ViewOdberatelTitle_mesto}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_psc}"/>
+                    <h:outputText value="#{odberatelController.selected.psc}" title="#{bundle.ViewOdberatelTitle_psc}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_krajina}"/>
+                    <h:outputText value="#{odberatelController.selected.krajina}" title="#{bundle.ViewOdberatelTitle_krajina}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_poznamka}"/>
+                    <h:outputText value="#{odberatelController.selected.poznamka}" title="#{bundle.ViewOdberatelTitle_poznamka}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_ico}"/>
+                    <h:outputText value="#{odberatelController.selected.ico}" title="#{bundle.ViewOdberatelTitle_ico}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_dic}"/>
+                    <h:outputText value="#{odberatelController.selected.dic}" title="#{bundle.ViewOdberatelTitle_dic}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_icdph}"/>
+                    <h:outputText value="#{odberatelController.selected.icdph}" title="#{bundle.ViewOdberatelTitle_icdph}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_telefon}"/>
+                    <h:outputText value="#{odberatelController.selected.telefon}" title="#{bundle.ViewOdberatelTitle_telefon}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_mobil}"/>
+                    <h:outputText value="#{odberatelController.selected.mobil}" title="#{bundle.ViewOdberatelTitle_mobil}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_fax}"/>
+                    <h:outputText value="#{odberatelController.selected.fax}" title="#{bundle.ViewOdberatelTitle_fax}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_email}"/>
+                    <h:outputText value="#{odberatelController.selected.email}" title="#{bundle.ViewOdberatelTitle_email}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_kontaktnaOsoba}"/>
+                    <h:outputText value="#{odberatelController.selected.kontaktnaOsoba}" title="#{bundle.ViewOdberatelTitle_kontaktnaOsoba}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_korespUlica}"/>
+                    <h:outputText value="#{odberatelController.selected.korespUlica}" title="#{bundle.ViewOdberatelTitle_korespUlica}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_korespMesto}"/>
+                    <h:outputText value="#{odberatelController.selected.korespMesto}" title="#{bundle.ViewOdberatelTitle_korespMesto}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_korespPsc}"/>
+                    <h:outputText value="#{odberatelController.selected.korespPsc}" title="#{bundle.ViewOdberatelTitle_korespPsc}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_korespKrajina}"/>
+                    <h:outputText value="#{odberatelController.selected.korespKrajina}" title="#{bundle.ViewOdberatelTitle_korespKrajina}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_platcaDph}"/>
+                    <h:outputText value="#{odberatelController.selected.platcaDph}" title="#{bundle.ViewOdberatelTitle_platcaDph}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_blokovat}"/>
+                    <h:outputText value="#{odberatelController.selected.blokovat}" title="#{bundle.ViewOdberatelTitle_blokovat}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_zmazany}"/>
+                    <h:outputText value="#{odberatelController.selected.zmazany}" title="#{bundle.ViewOdberatelTitle_zmazany}"/>
+                    <h:outputText value="#{bundle.ViewOdberatelLabel_dodavatel}"/>
+                    <h:outputText value="#{odberatelController.selected.dodavatel}" title="#{bundle.ViewOdberatelTitle_dodavatel}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{odberatelController.destroyAndView}" value="#{bundle.ViewOdberatelDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewOdberatelEditLink}"/>
+                <br />
+                <h:commandLink action="#{odberatelController.prepareCreate}" value="#{bundle.ViewOdberatelCreateLink}" />
+                <br />
+                <h:commandLink action="#{odberatelController.prepareList}" value="#{bundle.ViewOdberatelShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewOdberatelIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

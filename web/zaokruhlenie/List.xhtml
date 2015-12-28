@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListZaokruhlenieTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListZaokruhlenieEmpty}" rendered="#{zaokruhlenieController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{zaokruhlenieController.items.rowCount > 0}">
+                <h:outputText value="#{zaokruhlenieController.pagination.pageFirstItem + 1}..#{zaokruhlenieController.pagination.pageLastItem + 1}/#{zaokruhlenieController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{zaokruhlenieController.previous}" value="#{bundle.Previous} #{zaokruhlenieController.pagination.pageSize}" rendered="#{zaokruhlenieController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{zaokruhlenieController.next}" value="#{bundle.Next} #{zaokruhlenieController.pagination.pageSize}" rendered="#{zaokruhlenieController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{zaokruhlenieController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListZaokruhlenieTitle_id}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListZaokruhlenieTitle_nazov}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nazov}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListZaokruhlenieTitle_hodnota}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.hodnota}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{zaokruhlenieController.prepareView}" value="#{bundle.ListZaokruhlenieViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{zaokruhlenieController.prepareEdit}" value="#{bundle.ListZaokruhlenieEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{zaokruhlenieController.destroy}" value="#{bundle.ListZaokruhlenieDestroyLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <h:commandLink action="#{zaokruhlenieController.prepareCreate}" value="#{bundle.ListZaokruhlenieCreateLink}"/>
+            <br />
+            <br />
+            <h:commandLink value="#{bundle.ListZaokruhlenieIndexLink}" action="/index" immediate="true" />
+        </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

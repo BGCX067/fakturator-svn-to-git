@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditOdberatelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{odberatelController.selected.id}" title="#{bundle.EditOdberatelTitle_id}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_nazov}" for="nazov" />
+                    <h:inputText id="nazov" value="#{odberatelController.selected.nazov}" title="#{bundle.EditOdberatelTitle_nazov}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_nazov}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_ulica}" for="ulica" />
+                    <h:inputText id="ulica" value="#{odberatelController.selected.ulica}" title="#{bundle.EditOdberatelTitle_ulica}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_ulica}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_mesto}" for="mesto" />
+                    <h:inputText id="mesto" value="#{odberatelController.selected.mesto}" title="#{bundle.EditOdberatelTitle_mesto}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_mesto}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_psc}" for="psc" />
+                    <h:inputText id="psc" value="#{odberatelController.selected.psc}" title="#{bundle.EditOdberatelTitle_psc}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_psc}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_krajina}" for="krajina" />
+                    <h:inputText id="krajina" value="#{odberatelController.selected.krajina}" title="#{bundle.EditOdberatelTitle_krajina}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_krajina}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_poznamka}" for="poznamka" />
+                    <h:inputText id="poznamka" value="#{odberatelController.selected.poznamka}" title="#{bundle.EditOdberatelTitle_poznamka}" />
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_ico}" for="ico" />
+                    <h:inputText id="ico" value="#{odberatelController.selected.ico}" title="#{bundle.EditOdberatelTitle_ico}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_ico}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_dic}" for="dic" />
+                    <h:inputText id="dic" value="#{odberatelController.selected.dic}" title="#{bundle.EditOdberatelTitle_dic}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_dic}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_icdph}" for="icdph" />
+                    <h:inputText id="icdph" value="#{odberatelController.selected.icdph}" title="#{bundle.EditOdberatelTitle_icdph}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_icdph}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_telefon}" for="telefon" />
+                    <h:inputText id="telefon" value="#{odberatelController.selected.telefon}" title="#{bundle.EditOdberatelTitle_telefon}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_telefon}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_mobil}" for="mobil" />
+                    <h:inputText id="mobil" value="#{odberatelController.selected.mobil}" title="#{bundle.EditOdberatelTitle_mobil}" />
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_fax}" for="fax" />
+                    <h:inputText id="fax" value="#{odberatelController.selected.fax}" title="#{bundle.EditOdberatelTitle_fax}" />
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{odberatelController.selected.email}" title="#{bundle.EditOdberatelTitle_email}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_kontaktnaOsoba}" for="kontaktnaOsoba" />
+                    <h:inputText id="kontaktnaOsoba" value="#{odberatelController.selected.kontaktnaOsoba}" title="#{bundle.EditOdberatelTitle_kontaktnaOsoba}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_kontaktnaOsoba}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_korespUlica}" for="korespUlica" />
+                    <h:inputText id="korespUlica" value="#{odberatelController.selected.korespUlica}" title="#{bundle.EditOdberatelTitle_korespUlica}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_korespUlica}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_korespMesto}" for="korespMesto" />
+                    <h:inputText id="korespMesto" value="#{odberatelController.selected.korespMesto}" title="#{bundle.EditOdberatelTitle_korespMesto}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_korespMesto}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_korespPsc}" for="korespPsc" />
+                    <h:inputText id="korespPsc" value="#{odberatelController.selected.korespPsc}" title="#{bundle.EditOdberatelTitle_korespPsc}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_korespPsc}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_korespKrajina}" for="korespKrajina" />
+                    <h:inputText id="korespKrajina" value="#{odberatelController.selected.korespKrajina}" title="#{bundle.EditOdberatelTitle_korespKrajina}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_korespKrajina}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_platcaDph}" for="platcaDph" />
+                    <h:inputText id="platcaDph" value="#{odberatelController.selected.platcaDph}" title="#{bundle.EditOdberatelTitle_platcaDph}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_platcaDph}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_blokovat}" for="blokovat" />
+                    <h:inputText id="blokovat" value="#{odberatelController.selected.blokovat}" title="#{bundle.EditOdberatelTitle_blokovat}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_blokovat}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_zmazany}" for="zmazany" />
+                    <h:inputText id="zmazany" value="#{odberatelController.selected.zmazany}" title="#{bundle.EditOdberatelTitle_zmazany}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_zmazany}"/>
+                    <h:outputLabel value="#{bundle.EditOdberatelLabel_dodavatel}" for="dodavatel" />
+                    <h:selectOneMenu id="dodavatel" value="#{odberatelController.selected.dodavatel}" title="#{bundle.EditOdberatelTitle_dodavatel}" required="true" requiredMessage="#{bundle.EditOdberatelRequiredMessage_dodavatel}">
+                        <f:selectItems value="#{dodavatelController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{odberatelController.update}" value="#{bundle.EditOdberatelSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditOdberatelViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{odberatelController.prepareList}" value="#{bundle.EditOdberatelShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditOdberatelIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

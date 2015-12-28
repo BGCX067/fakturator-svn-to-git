@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateBankovyUcetTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{bankovyUcetController.selected.id}" title="#{bundle.CreateBankovyUcetTitle_id}" required="true" requiredMessage="#{bundle.CreateBankovyUcetRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_nazov}" for="nazov" />
+                    <h:inputText id="nazov" value="#{bankovyUcetController.selected.nazov}" title="#{bundle.CreateBankovyUcetTitle_nazov}" required="true" requiredMessage="#{bundle.CreateBankovyUcetRequiredMessage_nazov}"/>
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_predcislieUctu}" for="predcislieUctu" />
+                    <h:inputText id="predcislieUctu" value="#{bankovyUcetController.selected.predcislieUctu}" title="#{bundle.CreateBankovyUcetTitle_predcislieUctu}" />
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_cisloUctu}" for="cisloUctu" />
+                    <h:inputText id="cisloUctu" value="#{bankovyUcetController.selected.cisloUctu}" title="#{bundle.CreateBankovyUcetTitle_cisloUctu}" required="true" requiredMessage="#{bundle.CreateBankovyUcetRequiredMessage_cisloUctu}"/>
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_kodBanky}" for="kodBanky" />
+                    <h:inputText id="kodBanky" value="#{bankovyUcetController.selected.kodBanky}" title="#{bundle.CreateBankovyUcetTitle_kodBanky}" required="true" requiredMessage="#{bundle.CreateBankovyUcetRequiredMessage_kodBanky}"/>
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_ibanKod}" for="ibanKod" />
+                    <h:inputText id="ibanKod" value="#{bankovyUcetController.selected.ibanKod}" title="#{bundle.CreateBankovyUcetTitle_ibanKod}" />
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_swiftKod}" for="swiftKod" />
+                    <h:inputText id="swiftKod" value="#{bankovyUcetController.selected.swiftKod}" title="#{bundle.CreateBankovyUcetTitle_swiftKod}" />
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_nazovBanky}" for="nazovBanky" />
+                    <h:inputText id="nazovBanky" value="#{bankovyUcetController.selected.nazovBanky}" title="#{bundle.CreateBankovyUcetTitle_nazovBanky}" />
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_odberatel}" for="odberatel" />
+                    <h:selectOneMenu id="odberatel" value="#{bankovyUcetController.selected.odberatel}" title="#{bundle.CreateBankovyUcetTitle_odberatel}" required="true" requiredMessage="#{bundle.CreateBankovyUcetRequiredMessage_odberatel}">
+                        <f:selectItems value="#{odberatelController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateBankovyUcetLabel_dodavatel}" for="dodavatel" />
+                    <h:selectOneMenu id="dodavatel" value="#{bankovyUcetController.selected.dodavatel}" title="#{bundle.CreateBankovyUcetTitle_dodavatel}" required="true" requiredMessage="#{bundle.CreateBankovyUcetRequiredMessage_dodavatel}">
+                        <f:selectItems value="#{dodavatelController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{bankovyUcetController.create}" value="#{bundle.CreateBankovyUcetSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{bankovyUcetController.prepareList}" value="#{bundle.CreateBankovyUcetShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateBankovyUcetIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

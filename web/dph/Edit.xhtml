@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditDphTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditDphLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{dphController.selected.id}" title="#{bundle.EditDphTitle_id}" required="true" requiredMessage="#{bundle.EditDphRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditDphLabel_nazov}" for="nazov" />
+                    <h:inputText id="nazov" value="#{dphController.selected.nazov}" title="#{bundle.EditDphTitle_nazov}" required="true" requiredMessage="#{bundle.EditDphRequiredMessage_nazov}"/>
+                    <h:outputLabel value="#{bundle.EditDphLabel_hodnota}" for="hodnota" />
+                    <h:inputText id="hodnota" value="#{dphController.selected.hodnota}" title="#{bundle.EditDphTitle_hodnota}" required="true" requiredMessage="#{bundle.EditDphRequiredMessage_hodnota}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{dphController.update}" value="#{bundle.EditDphSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditDphViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{dphController.prepareList}" value="#{bundle.EditDphShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditDphIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTovarTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTovarLabel_id}"/>
+                    <h:outputText value="#{tovarController.selected.id}" title="#{bundle.ViewTovarTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewTovarLabel_nazov}"/>
+                    <h:outputText value="#{tovarController.selected.nazov}" title="#{bundle.ViewTovarTitle_nazov}"/>
+                    <h:outputText value="#{bundle.ViewTovarLabel_mnozstvoNaSklade}"/>
+                    <h:outputText value="#{tovarController.selected.mnozstvoNaSklade}" title="#{bundle.ViewTovarTitle_mnozstvoNaSklade}"/>
+                    <h:outputText value="#{bundle.ViewTovarLabel_mernaJednotka}"/>
+                    <h:outputText value="#{tovarController.selected.mernaJednotka}" title="#{bundle.ViewTovarTitle_mernaJednotka}"/>
+                    <h:outputText value="#{bundle.ViewTovarLabel_cenaBezDph}"/>
+                    <h:outputText value="#{tovarController.selected.cenaBezDph}" title="#{bundle.ViewTovarTitle_cenaBezDph}"/>
+                    <h:outputText value="#{bundle.ViewTovarLabel_poznamka}"/>
+                    <h:outputText value="#{tovarController.selected.poznamka}" title="#{bundle.ViewTovarTitle_poznamka}"/>
+                    <h:outputText value="#{bundle.ViewTovarLabel_zmazany}"/>
+                    <h:outputText value="#{tovarController.selected.zmazany}" title="#{bundle.ViewTovarTitle_zmazany}"/>
+                    <h:outputText value="#{bundle.ViewTovarLabel_kategoria}"/>
+                    <h:outputText value="#{tovarController.selected.kategoria}" title="#{bundle.ViewTovarTitle_kategoria}"/>
+                    <h:outputText value="#{bundle.ViewTovarLabel_dph}"/>
+                    <h:outputText value="#{tovarController.selected.dph}" title="#{bundle.ViewTovarTitle_dph}"/>
+                    <h:outputText value="#{bundle.ViewTovarLabel_dodavatel}"/>
+                    <h:outputText value="#{tovarController.selected.dodavatel}" title="#{bundle.ViewTovarTitle_dodavatel}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tovarController.destroyAndView}" value="#{bundle.ViewTovarDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewTovarEditLink}"/>
+                <br />
+                <h:commandLink action="#{tovarController.prepareCreate}" value="#{bundle.ViewTovarCreateLink}" />
+                <br />
+                <h:commandLink action="#{tovarController.prepareList}" value="#{bundle.ViewTovarShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewTovarIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

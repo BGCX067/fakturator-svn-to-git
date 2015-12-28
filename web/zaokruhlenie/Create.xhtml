@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateZaokruhlenieTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateZaokruhlenieLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{zaokruhlenieController.selected.id}" title="#{bundle.CreateZaokruhlenieTitle_id}" required="true" requiredMessage="#{bundle.CreateZaokruhlenieRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateZaokruhlenieLabel_nazov}" for="nazov" />
+                    <h:inputText id="nazov" value="#{zaokruhlenieController.selected.nazov}" title="#{bundle.CreateZaokruhlenieTitle_nazov}" required="true" requiredMessage="#{bundle.CreateZaokruhlenieRequiredMessage_nazov}"/>
+                    <h:outputLabel value="#{bundle.CreateZaokruhlenieLabel_hodnota}" for="hodnota" />
+                    <h:inputText id="hodnota" value="#{zaokruhlenieController.selected.hodnota}" title="#{bundle.CreateZaokruhlenieTitle_hodnota}" required="true" requiredMessage="#{bundle.CreateZaokruhlenieRequiredMessage_hodnota}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{zaokruhlenieController.create}" value="#{bundle.CreateZaokruhlenieSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{zaokruhlenieController.prepareList}" value="#{bundle.CreateZaokruhlenieShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateZaokruhlenieIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

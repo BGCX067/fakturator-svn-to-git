@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewFakturaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewFakturaLabel_id}"/>
+                    <h:outputText value="#{fakturaController.selected.id}" title="#{bundle.ViewFakturaTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_cisloFaktura}"/>
+                    <h:outputText value="#{fakturaController.selected.cisloFaktura}" title="#{bundle.ViewFakturaTitle_cisloFaktura}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_varSymb}"/>
+                    <h:outputText value="#{fakturaController.selected.varSymb}" title="#{bundle.ViewFakturaTitle_varSymb}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_konstSymb}"/>
+                    <h:outputText value="#{fakturaController.selected.konstSymb}" title="#{bundle.ViewFakturaTitle_konstSymb}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_text}"/>
+                    <h:outputText value="#{fakturaController.selected.text}" title="#{bundle.ViewFakturaTitle_text}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_celkovaSuma}"/>
+                    <h:outputText value="#{fakturaController.selected.celkovaSuma}" title="#{bundle.ViewFakturaTitle_celkovaSuma}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_datumVystavenia}"/>
+                    <h:outputText value="#{fakturaController.selected.datumVystavenia}" title="#{bundle.ViewFakturaTitle_datumVystavenia}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_datumSplatnosti}"/>
+                    <h:outputText value="#{fakturaController.selected.datumSplatnosti}" title="#{bundle.ViewFakturaTitle_datumSplatnosti}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_uhradena}"/>
+                    <h:outputText value="#{fakturaController.selected.uhradena}" title="#{bundle.ViewFakturaTitle_uhradena}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_poznamka}"/>
+                    <h:outputText value="#{fakturaController.selected.poznamka}" title="#{bundle.ViewFakturaTitle_poznamka}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_zmazana}"/>
+                    <h:outputText value="#{fakturaController.selected.zmazana}" title="#{bundle.ViewFakturaTitle_zmazana}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_zaokruhlenie}"/>
+                    <h:outputText value="#{fakturaController.selected.zaokruhlenie}" title="#{bundle.ViewFakturaTitle_zaokruhlenie}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_formaUhrady}"/>
+                    <h:outputText value="#{fakturaController.selected.formaUhrady}" title="#{bundle.ViewFakturaTitle_formaUhrady}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_typFaktura}"/>
+                    <h:outputText value="#{fakturaController.selected.typFaktura}" title="#{bundle.ViewFakturaTitle_typFaktura}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_projekt}"/>
+                    <h:outputText value="#{fakturaController.selected.projekt}" title="#{bundle.ViewFakturaTitle_projekt}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_odberatel}"/>
+                    <h:outputText value="#{fakturaController.selected.odberatel}" title="#{bundle.ViewFakturaTitle_odberatel}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_mena}"/>
+                    <h:outputText value="#{fakturaController.selected.mena}" title="#{bundle.ViewFakturaTitle_mena}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_jazyk}"/>
+                    <h:outputText value="#{fakturaController.selected.jazyk}" title="#{bundle.ViewFakturaTitle_jazyk}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_dodavatel}"/>
+                    <h:outputText value="#{fakturaController.selected.dodavatel}" title="#{bundle.ViewFakturaTitle_dodavatel}"/>
+                    <h:outputText value="#{bundle.ViewFakturaLabel_bankovyUcet}"/>
+                    <h:outputText value="#{fakturaController.selected.bankovyUcet}" title="#{bundle.ViewFakturaTitle_bankovyUcet}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{fakturaController.destroyAndView}" value="#{bundle.ViewFakturaDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewFakturaEditLink}"/>
+                <br />
+                <h:commandLink action="#{fakturaController.prepareCreate}" value="#{bundle.ViewFakturaCreateLink}" />
+                <br />
+                <h:commandLink action="#{fakturaController.prepareList}" value="#{bundle.ViewFakturaShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewFakturaIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

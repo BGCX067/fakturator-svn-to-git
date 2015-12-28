@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateOdberatelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{odberatelController.selected.id}" title="#{bundle.CreateOdberatelTitle_id}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_nazov}" for="nazov" />
+                    <h:inputText id="nazov" value="#{odberatelController.selected.nazov}" title="#{bundle.CreateOdberatelTitle_nazov}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_nazov}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_ulica}" for="ulica" />
+                    <h:inputText id="ulica" value="#{odberatelController.selected.ulica}" title="#{bundle.CreateOdberatelTitle_ulica}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_ulica}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_mesto}" for="mesto" />
+                    <h:inputText id="mesto" value="#{odberatelController.selected.mesto}" title="#{bundle.CreateOdberatelTitle_mesto}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_mesto}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_psc}" for="psc" />
+                    <h:inputText id="psc" value="#{odberatelController.selected.psc}" title="#{bundle.CreateOdberatelTitle_psc}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_psc}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_krajina}" for="krajina" />
+                    <h:inputText id="krajina" value="#{odberatelController.selected.krajina}" title="#{bundle.CreateOdberatelTitle_krajina}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_krajina}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_poznamka}" for="poznamka" />
+                    <h:inputText id="poznamka" value="#{odberatelController.selected.poznamka}" title="#{bundle.CreateOdberatelTitle_poznamka}" />
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_ico}" for="ico" />
+                    <h:inputText id="ico" value="#{odberatelController.selected.ico}" title="#{bundle.CreateOdberatelTitle_ico}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_ico}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_dic}" for="dic" />
+                    <h:inputText id="dic" value="#{odberatelController.selected.dic}" title="#{bundle.CreateOdberatelTitle_dic}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_dic}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_icdph}" for="icdph" />
+                    <h:inputText id="icdph" value="#{odberatelController.selected.icdph}" title="#{bundle.CreateOdberatelTitle_icdph}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_icdph}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_telefon}" for="telefon" />
+                    <h:inputText id="telefon" value="#{odberatelController.selected.telefon}" title="#{bundle.CreateOdberatelTitle_telefon}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_telefon}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_mobil}" for="mobil" />
+                    <h:inputText id="mobil" value="#{odberatelController.selected.mobil}" title="#{bundle.CreateOdberatelTitle_mobil}" />
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_fax}" for="fax" />
+                    <h:inputText id="fax" value="#{odberatelController.selected.fax}" title="#{bundle.CreateOdberatelTitle_fax}" />
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{odberatelController.selected.email}" title="#{bundle.CreateOdberatelTitle_email}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_kontaktnaOsoba}" for="kontaktnaOsoba" />
+                    <h:inputText id="kontaktnaOsoba" value="#{odberatelController.selected.kontaktnaOsoba}" title="#{bundle.CreateOdberatelTitle_kontaktnaOsoba}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_kontaktnaOsoba}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_korespUlica}" for="korespUlica" />
+                    <h:inputText id="korespUlica" value="#{odberatelController.selected.korespUlica}" title="#{bundle.CreateOdberatelTitle_korespUlica}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_korespUlica}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_korespMesto}" for="korespMesto" />
+                    <h:inputText id="korespMesto" value="#{odberatelController.selected.korespMesto}" title="#{bundle.CreateOdberatelTitle_korespMesto}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_korespMesto}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_korespPsc}" for="korespPsc" />
+                    <h:inputText id="korespPsc" value="#{odberatelController.selected.korespPsc}" title="#{bundle.CreateOdberatelTitle_korespPsc}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_korespPsc}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_korespKrajina}" for="korespKrajina" />
+                    <h:inputText id="korespKrajina" value="#{odberatelController.selected.korespKrajina}" title="#{bundle.CreateOdberatelTitle_korespKrajina}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_korespKrajina}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_platcaDph}" for="platcaDph" />
+                    <h:inputText id="platcaDph" value="#{odberatelController.selected.platcaDph}" title="#{bundle.CreateOdberatelTitle_platcaDph}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_platcaDph}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_blokovat}" for="blokovat" />
+                    <h:inputText id="blokovat" value="#{odberatelController.selected.blokovat}" title="#{bundle.CreateOdberatelTitle_blokovat}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_blokovat}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_zmazany}" for="zmazany" />
+                    <h:inputText id="zmazany" value="#{odberatelController.selected.zmazany}" title="#{bundle.CreateOdberatelTitle_zmazany}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_zmazany}"/>
+                    <h:outputLabel value="#{bundle.CreateOdberatelLabel_dodavatel}" for="dodavatel" />
+                    <h:selectOneMenu id="dodavatel" value="#{odberatelController.selected.dodavatel}" title="#{bundle.CreateOdberatelTitle_dodavatel}" required="true" requiredMessage="#{bundle.CreateOdberatelRequiredMessage_dodavatel}">
+                        <f:selectItems value="#{dodavatelController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{odberatelController.create}" value="#{bundle.CreateOdberatelSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{odberatelController.prepareList}" value="#{bundle.CreateOdberatelShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateOdberatelIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

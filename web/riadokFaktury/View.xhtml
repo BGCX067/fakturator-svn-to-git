@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRiadokFakturyTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRiadokFakturyLabel_id}"/>
+                    <h:outputText value="#{riadokFakturyController.selected.id}" title="#{bundle.ViewRiadokFakturyTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewRiadokFakturyLabel_mnozstvo}"/>
+                    <h:outputText value="#{riadokFakturyController.selected.mnozstvo}" title="#{bundle.ViewRiadokFakturyTitle_mnozstvo}"/>
+                    <h:outputText value="#{bundle.ViewRiadokFakturyLabel_cenaBezDph}"/>
+                    <h:outputText value="#{riadokFakturyController.selected.cenaBezDph}" title="#{bundle.ViewRiadokFakturyTitle_cenaBezDph}"/>
+                    <h:outputText value="#{bundle.ViewRiadokFakturyLabel_cenaSpolu}"/>
+                    <h:outputText value="#{riadokFakturyController.selected.cenaSpolu}" title="#{bundle.ViewRiadokFakturyTitle_cenaSpolu}"/>
+                    <h:outputText value="#{bundle.ViewRiadokFakturyLabel_tovar}"/>
+                    <h:outputText value="#{riadokFakturyController.selected.tovar}" title="#{bundle.ViewRiadokFakturyTitle_tovar}"/>
+                    <h:outputText value="#{bundle.ViewRiadokFakturyLabel_faktura}"/>
+                    <h:outputText value="#{riadokFakturyController.selected.faktura}" title="#{bundle.ViewRiadokFakturyTitle_faktura}"/>
+                    <h:outputText value="#{bundle.ViewRiadokFakturyLabel_dph}"/>
+                    <h:outputText value="#{riadokFakturyController.selected.dph}" title="#{bundle.ViewRiadokFakturyTitle_dph}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{riadokFakturyController.destroyAndView}" value="#{bundle.ViewRiadokFakturyDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewRiadokFakturyEditLink}"/>
+                <br />
+                <h:commandLink action="#{riadokFakturyController.prepareCreate}" value="#{bundle.ViewRiadokFakturyCreateLink}" />
+                <br />
+                <h:commandLink action="#{riadokFakturyController.prepareList}" value="#{bundle.ViewRiadokFakturyShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewRiadokFakturyIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListOdberatelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListOdberatelEmpty}" rendered="#{odberatelController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{odberatelController.items.rowCount > 0}">
+                <h:outputText value="#{odberatelController.pagination.pageFirstItem + 1}..#{odberatelController.pagination.pageLastItem + 1}/#{odberatelController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{odberatelController.previous}" value="#{bundle.Previous} #{odberatelController.pagination.pageSize}" rendered="#{odberatelController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{odberatelController.next}" value="#{bundle.Next} #{odberatelController.pagination.pageSize}" rendered="#{odberatelController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{odberatelController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_id}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_nazov}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nazov}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_ulica}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.ulica}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_mesto}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.mesto}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_psc}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.psc}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_krajina}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.krajina}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_poznamka}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.poznamka}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_ico}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.ico}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_dic}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.dic}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_icdph}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.icdph}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_telefon}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.telefon}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_mobil}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.mobil}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_fax}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.fax}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_email}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.email}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_kontaktnaOsoba}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.kontaktnaOsoba}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_korespUlica}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.korespUlica}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_korespMesto}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.korespMesto}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_korespPsc}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.korespPsc}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_korespKrajina}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.korespKrajina}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_platcaDph}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.platcaDph}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_blokovat}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.blokovat}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_zmazany}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.zmazany}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListOdberatelTitle_dodavatel}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.dodavatel}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{odberatelController.prepareView}" value="#{bundle.ListOdberatelViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{odberatelController.prepareEdit}" value="#{bundle.ListOdberatelEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{odberatelController.destroy}" value="#{bundle.ListOdberatelDestroyLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <h:commandLink action="#{odberatelController.prepareCreate}" value="#{bundle.ListOdberatelCreateLink}"/>
+            <br />
+            <br />
+            <h:commandLink value="#{bundle.ListOdberatelIndexLink}" action="/index" immediate="true" />
+        </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

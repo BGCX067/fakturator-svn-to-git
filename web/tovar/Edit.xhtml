@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTovarTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTovarLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{tovarController.selected.id}" title="#{bundle.EditTovarTitle_id}" required="true" requiredMessage="#{bundle.EditTovarRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditTovarLabel_nazov}" for="nazov" />
+                    <h:inputText id="nazov" value="#{tovarController.selected.nazov}" title="#{bundle.EditTovarTitle_nazov}" required="true" requiredMessage="#{bundle.EditTovarRequiredMessage_nazov}"/>
+                    <h:outputLabel value="#{bundle.EditTovarLabel_mnozstvoNaSklade}" for="mnozstvoNaSklade" />
+                    <h:inputText id="mnozstvoNaSklade" value="#{tovarController.selected.mnozstvoNaSklade}" title="#{bundle.EditTovarTitle_mnozstvoNaSklade}" required="true" requiredMessage="#{bundle.EditTovarRequiredMessage_mnozstvoNaSklade}"/>
+                    <h:outputLabel value="#{bundle.EditTovarLabel_mernaJednotka}" for="mernaJednotka" />
+                    <h:inputText id="mernaJednotka" value="#{tovarController.selected.mernaJednotka}" title="#{bundle.EditTovarTitle_mernaJednotka}" required="true" requiredMessage="#{bundle.EditTovarRequiredMessage_mernaJednotka}"/>
+                    <h:outputLabel value="#{bundle.EditTovarLabel_cenaBezDph}" for="cenaBezDph" />
+                    <h:inputText id="cenaBezDph" value="#{tovarController.selected.cenaBezDph}" title="#{bundle.EditTovarTitle_cenaBezDph}" required="true" requiredMessage="#{bundle.EditTovarRequiredMessage_cenaBezDph}"/>
+                    <h:outputLabel value="#{bundle.EditTovarLabel_poznamka}" for="poznamka" />
+                    <h:inputText id="poznamka" value="#{tovarController.selected.poznamka}" title="#{bundle.EditTovarTitle_poznamka}" />
+                    <h:outputLabel value="#{bundle.EditTovarLabel_zmazany}" for="zmazany" />
+                    <h:inputText id="zmazany" value="#{tovarController.selected.zmazany}" title="#{bundle.EditTovarTitle_zmazany}" required="true" requiredMessage="#{bundle.EditTovarRequiredMessage_zmazany}"/>
+                    <h:outputLabel value="#{bundle.EditTovarLabel_kategoria}" for="kategoria" />
+                    <h:selectOneMenu id="kategoria" value="#{tovarController.selected.kategoria}" title="#{bundle.EditTovarTitle_kategoria}" required="true" requiredMessage="#{bundle.EditTovarRequiredMessage_kategoria}">
+                        <f:selectItems value="#{kategoriaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTovarLabel_dph}" for="dph" />
+                    <h:selectOneMenu id="dph" value="#{tovarController.selected.dph}" title="#{bundle.EditTovarTitle_dph}" required="true" requiredMessage="#{bundle.EditTovarRequiredMessage_dph}">
+                        <f:selectItems value="#{dphController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTovarLabel_dodavatel}" for="dodavatel" />
+                    <h:selectOneMenu id="dodavatel" value="#{tovarController.selected.dodavatel}" title="#{bundle.EditTovarTitle_dodavatel}" required="true" requiredMessage="#{bundle.EditTovarRequiredMessage_dodavatel}">
+                        <f:selectItems value="#{dodavatelController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tovarController.update}" value="#{bundle.EditTovarSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditTovarViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{tovarController.prepareList}" value="#{bundle.EditTovarShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditTovarIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

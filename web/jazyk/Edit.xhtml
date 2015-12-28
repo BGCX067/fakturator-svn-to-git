@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditJazykTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditJazykLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{jazykController.selected.id}" title="#{bundle.EditJazykTitle_id}" required="true" requiredMessage="#{bundle.EditJazykRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditJazykLabel_nazov}" for="nazov" />
+                    <h:inputText id="nazov" value="#{jazykController.selected.nazov}" title="#{bundle.EditJazykTitle_nazov}" required="true" requiredMessage="#{bundle.EditJazykRequiredMessage_nazov}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{jazykController.update}" value="#{bundle.EditJazykSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditJazykViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{jazykController.prepareList}" value="#{bundle.EditJazykShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditJazykIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

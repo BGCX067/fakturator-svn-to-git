@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateFakturaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{fakturaController.selected.id}" title="#{bundle.CreateFakturaTitle_id}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_cisloFaktura}" for="cisloFaktura" />
+                    <h:inputText id="cisloFaktura" value="#{fakturaController.selected.cisloFaktura}" title="#{bundle.CreateFakturaTitle_cisloFaktura}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_cisloFaktura}"/>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_varSymb}" for="varSymb" />
+                    <h:inputText id="varSymb" value="#{fakturaController.selected.varSymb}" title="#{bundle.CreateFakturaTitle_varSymb}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_varSymb}"/>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_konstSymb}" for="konstSymb" />
+                    <h:inputText id="konstSymb" value="#{fakturaController.selected.konstSymb}" title="#{bundle.CreateFakturaTitle_konstSymb}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_konstSymb}"/>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_text}" for="text" />
+                    <h:inputTextarea rows="4" cols="30" id="text" value="#{fakturaController.selected.text}" title="#{bundle.CreateFakturaTitle_text}" />
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_celkovaSuma}" for="celkovaSuma" />
+                    <h:inputText id="celkovaSuma" value="#{fakturaController.selected.celkovaSuma}" title="#{bundle.CreateFakturaTitle_celkovaSuma}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_celkovaSuma}"/>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_datumVystavenia}" for="datumVystavenia" />
+                    <h:inputText id="datumVystavenia" value="#{fakturaController.selected.datumVystavenia}" title="#{bundle.CreateFakturaTitle_datumVystavenia}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_datumVystavenia}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_datumSplatnosti}" for="datumSplatnosti" />
+                    <h:inputText id="datumSplatnosti" value="#{fakturaController.selected.datumSplatnosti}" title="#{bundle.CreateFakturaTitle_datumSplatnosti}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_datumSplatnosti}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_uhradena}" for="uhradena" />
+                    <h:inputText id="uhradena" value="#{fakturaController.selected.uhradena}" title="#{bundle.CreateFakturaTitle_uhradena}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_uhradena}"/>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_poznamka}" for="poznamka" />
+                    <h:inputText id="poznamka" value="#{fakturaController.selected.poznamka}" title="#{bundle.CreateFakturaTitle_poznamka}" />
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_zmazana}" for="zmazana" />
+                    <h:inputText id="zmazana" value="#{fakturaController.selected.zmazana}" title="#{bundle.CreateFakturaTitle_zmazana}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_zmazana}"/>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_zaokruhlenie}" for="zaokruhlenie" />
+                    <h:selectOneMenu id="zaokruhlenie" value="#{fakturaController.selected.zaokruhlenie}" title="#{bundle.CreateFakturaTitle_zaokruhlenie}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_zaokruhlenie}">
+                        <f:selectItems value="#{zaokruhlenieController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_formaUhrady}" for="formaUhrady" />
+                    <h:selectOneMenu id="formaUhrady" value="#{fakturaController.selected.formaUhrady}" title="#{bundle.CreateFakturaTitle_formaUhrady}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_formaUhrady}">
+                        <f:selectItems value="#{formaUhradyController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_typFaktura}" for="typFaktura" />
+                    <h:selectOneMenu id="typFaktura" value="#{fakturaController.selected.typFaktura}" title="#{bundle.CreateFakturaTitle_typFaktura}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_typFaktura}">
+                        <f:selectItems value="#{typFakturaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_projekt}" for="projekt" />
+                    <h:selectOneMenu id="projekt" value="#{fakturaController.selected.projekt}" title="#{bundle.CreateFakturaTitle_projekt}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_projekt}">
+                        <f:selectItems value="#{projektController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_odberatel}" for="odberatel" />
+                    <h:selectOneMenu id="odberatel" value="#{fakturaController.selected.odberatel}" title="#{bundle.CreateFakturaTitle_odberatel}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_odberatel}">
+                        <f:selectItems value="#{odberatelController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_mena}" for="mena" />
+                    <h:selectOneMenu id="mena" value="#{fakturaController.selected.mena}" title="#{bundle.CreateFakturaTitle_mena}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_mena}">
+                        <f:selectItems value="#{menaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_jazyk}" for="jazyk" />
+                    <h:selectOneMenu id="jazyk" value="#{fakturaController.selected.jazyk}" title="#{bundle.CreateFakturaTitle_jazyk}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_jazyk}">
+                        <f:selectItems value="#{jazykController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_dodavatel}" for="dodavatel" />
+                    <h:selectOneMenu id="dodavatel" value="#{fakturaController.selected.dodavatel}" title="#{bundle.CreateFakturaTitle_dodavatel}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_dodavatel}">
+                        <f:selectItems value="#{dodavatelController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFakturaLabel_bankovyUcet}" for="bankovyUcet" />
+                    <h:selectOneMenu id="bankovyUcet" value="#{fakturaController.selected.bankovyUcet}" title="#{bundle.CreateFakturaTitle_bankovyUcet}" required="true" requiredMessage="#{bundle.CreateFakturaRequiredMessage_bankovyUcet}">
+                        <f:selectItems value="#{bankovyUcetController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{fakturaController.create}" value="#{bundle.CreateFakturaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{fakturaController.prepareList}" value="#{bundle.CreateFakturaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateFakturaIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

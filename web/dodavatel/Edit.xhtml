@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditDodavatelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{dodavatelController.selected.id}" title="#{bundle.EditDodavatelTitle_id}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_nazov}" for="nazov" />
+                    <h:inputText id="nazov" value="#{dodavatelController.selected.nazov}" title="#{bundle.EditDodavatelTitle_nazov}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_nazov}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_ulica}" for="ulica" />
+                    <h:inputText id="ulica" value="#{dodavatelController.selected.ulica}" title="#{bundle.EditDodavatelTitle_ulica}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_ulica}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_mesto}" for="mesto" />
+                    <h:inputText id="mesto" value="#{dodavatelController.selected.mesto}" title="#{bundle.EditDodavatelTitle_mesto}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_mesto}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_psc}" for="psc" />
+                    <h:inputText id="psc" value="#{dodavatelController.selected.psc}" title="#{bundle.EditDodavatelTitle_psc}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_psc}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_krajina}" for="krajina" />
+                    <h:inputText id="krajina" value="#{dodavatelController.selected.krajina}" title="#{bundle.EditDodavatelTitle_krajina}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_krajina}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_poznamka}" for="poznamka" />
+                    <h:inputText id="poznamka" value="#{dodavatelController.selected.poznamka}" title="#{bundle.EditDodavatelTitle_poznamka}" />
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_ico}" for="ico" />
+                    <h:inputText id="ico" value="#{dodavatelController.selected.ico}" title="#{bundle.EditDodavatelTitle_ico}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_ico}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_dic}" for="dic" />
+                    <h:inputText id="dic" value="#{dodavatelController.selected.dic}" title="#{bundle.EditDodavatelTitle_dic}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_dic}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_icdph}" for="icdph" />
+                    <h:inputText id="icdph" value="#{dodavatelController.selected.icdph}" title="#{bundle.EditDodavatelTitle_icdph}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_icdph}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_registerOpZr}" for="registerOpZr" />
+                    <h:inputText id="registerOpZr" value="#{dodavatelController.selected.registerOpZr}" title="#{bundle.EditDodavatelTitle_registerOpZr}" />
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_telefon}" for="telefon" />
+                    <h:inputText id="telefon" value="#{dodavatelController.selected.telefon}" title="#{bundle.EditDodavatelTitle_telefon}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_telefon}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_mobil}" for="mobil" />
+                    <h:inputText id="mobil" value="#{dodavatelController.selected.mobil}" title="#{bundle.EditDodavatelTitle_mobil}" />
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{dodavatelController.selected.email}" title="#{bundle.EditDodavatelTitle_email}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_web}" for="web" />
+                    <h:inputText id="web" value="#{dodavatelController.selected.web}" title="#{bundle.EditDodavatelTitle_web}" />
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_logo}" for="logo" />
+                    <h:inputTextarea rows="4" cols="30" id="logo" value="#{dodavatelController.selected.logo}" title="#{bundle.EditDodavatelTitle_logo}" />
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_peciatka}" for="peciatka" />
+                    <h:inputTextarea rows="4" cols="30" id="peciatka" value="#{dodavatelController.selected.peciatka}" title="#{bundle.EditDodavatelTitle_peciatka}" />
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_kontaktnaOsoba}" for="kontaktnaOsoba" />
+                    <h:inputText id="kontaktnaOsoba" value="#{dodavatelController.selected.kontaktnaOsoba}" title="#{bundle.EditDodavatelTitle_kontaktnaOsoba}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_kontaktnaOsoba}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_platcaDph}" for="platcaDph" />
+                    <h:inputText id="platcaDph" value="#{dodavatelController.selected.platcaDph}" title="#{bundle.EditDodavatelTitle_platcaDph}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_platcaDph}"/>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_zaokruhlenie}" for="zaokruhlenie" />
+                    <h:selectOneMenu id="zaokruhlenie" value="#{dodavatelController.selected.zaokruhlenie}" title="#{bundle.EditDodavatelTitle_zaokruhlenie}" required="true" requiredMessage="#{bundle.EditDodavatelRequiredMessage_zaokruhlenie}">
+                        <f:selectItems value="#{zaokruhlenieController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditDodavatelLabel_dodavatelLogin}" for="dodavatelLogin" />
+                    <h:selectOneMenu id="dodavatelLogin" value="#{dodavatelController.selected.dodavatelLogin}" title="#{bundle.EditDodavatelTitle_dodavatelLogin}" >
+                        <f:selectItems value="#{dodavatelLoginController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{dodavatelController.update}" value="#{bundle.EditDodavatelSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditDodavatelViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{dodavatelController.prepareList}" value="#{bundle.EditDodavatelShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditDodavatelIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

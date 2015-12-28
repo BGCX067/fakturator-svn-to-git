@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewDodavatelLoginTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewDodavatelLoginLabel_id}"/>
+                    <h:outputText value="#{dodavatelLoginController.selected.id}" title="#{bundle.ViewDodavatelLoginTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLoginLabel_login}"/>
+                    <h:outputText value="#{dodavatelLoginController.selected.login}" title="#{bundle.ViewDodavatelLoginTitle_login}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLoginLabel_heslo}"/>
+                    <h:outputText value="#{dodavatelLoginController.selected.heslo}" title="#{bundle.ViewDodavatelLoginTitle_heslo}"/>
+                    <h:outputText value="#{bundle.ViewDodavatelLoginLabel_dodavatel}"/>
+                    <h:outputText value="#{dodavatelLoginController.selected.dodavatel}" title="#{bundle.ViewDodavatelLoginTitle_dodavatel}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{dodavatelLoginController.destroyAndView}" value="#{bundle.ViewDodavatelLoginDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewDodavatelLoginEditLink}"/>
+                <br />
+                <h:commandLink action="#{dodavatelLoginController.prepareCreate}" value="#{bundle.ViewDodavatelLoginCreateLink}" />
+                <br />
+                <h:commandLink action="#{dodavatelLoginController.prepareList}" value="#{bundle.ViewDodavatelLoginShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewDodavatelLoginIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
